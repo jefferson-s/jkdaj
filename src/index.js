@@ -1,15 +1,42 @@
-import React from 'react';
+import React, { Component, PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+class App2 extends Component{
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      clock: 1000,
+      copo: 'água'
+    }
+  }
+  alterarCopo = () => {
+    this.setState({
+        copo: 'refrigerante'
+    })
+  }
+
+  
+  render(){
+    const { clock, copo } = this.state
+    return (
+      <div>
+          <h1>{clock}</h1>
+          <button onClick = {() => this.alterarCopo()}>{copo}</button>
+      </div>
+
+    )
+  
+  }
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

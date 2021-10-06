@@ -15,6 +15,7 @@ function App() {
              
              {sum(40, 60)}
              <Button onClick = {() =>{sum(40, 60)}} name = "Raising Information"/>
+             
            </h1>
         </p>
         <a
